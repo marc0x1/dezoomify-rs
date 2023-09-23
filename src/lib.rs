@@ -60,7 +60,7 @@ fn stdin_line() -> Result<String, ZoomError> {
     Ok(first_line?)
 }
 
-async fn list_tiles(
+pub async fn list_tiles(
     dezoomer: &mut dyn Dezoomer,
     http: &Client,
     uri: &str,
@@ -133,7 +133,7 @@ fn progress_bar(n: usize) -> ProgressBar {
     progress
 }
 
-pub async fn find_zoomlevel(args: &Arguments) -> Result<ZoomLevel, ZoomError> {
+async fn find_zoomlevel(args: &Arguments) -> Result<ZoomLevel, ZoomError> {
     let mut dezoomer = args.find_dezoomer()?;
     let uri = args.choose_input_uri()?;
     let http_client = client(args.headers(), args, Some(&uri))?;
