@@ -133,7 +133,7 @@ fn progress_bar(n: usize) -> ProgressBar {
     progress
 }
 
-async fn find_zoomlevel(args: &Arguments) -> Result<ZoomLevel, ZoomError> {
+pub async fn find_zoomlevel(args: &Arguments) -> Result<ZoomLevel, ZoomError> {
     let mut dezoomer = args.find_dezoomer()?;
     let uri = args.choose_input_uri()?;
     let http_client = client(args.headers(), args, Some(&uri))?;
