@@ -29,10 +29,10 @@ use crate::output_file::reserve_output_file;
 
 mod arguments;
 pub mod dezoomer;
-mod encoder;
-mod errors;
-mod network;
-mod output_file;
+pub mod encoder;
+pub mod errors;
+pub mod network;
+pub mod output_file;
 pub mod tile;
 mod vec2d;
 
@@ -43,11 +43,11 @@ pub mod generic;
 pub mod google_arts_and_culture;
 pub mod iiif;
 pub mod iipimage;
-mod json_utils;
+pub mod json_utils;
 pub mod krpano;
 pub mod nypl;
 pub mod pff;
-mod throttler;
+pub mod throttler;
 pub mod zoomify;
 
 fn stdin_line() -> Result<String, ZoomError> {
