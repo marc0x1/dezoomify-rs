@@ -262,8 +262,8 @@ pub async fn dezoomify_level(
 
 #[derive(Debug)]
 pub struct TileDownloadError {
-    tile_reference: TileReference,
-    cause: ZoomError,
+    pub tile_reference: TileReference,
+    pub cause: ZoomError,
 }
 
 impl fmt::Display for TileDownloadError {
